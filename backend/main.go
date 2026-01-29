@@ -16,7 +16,7 @@ import (
 )
 
 type Entry struct {
-	ID        int       `json:"id"`
+	ID        int       `json:"id"` // Small comment to comment this json ID
 	Name      string    `json:"name"`
 	Message   string    `json:"message"`
 	CreatedAt time.Time `json:"created_at"`
