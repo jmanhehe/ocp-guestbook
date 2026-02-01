@@ -74,7 +74,7 @@ jobs:
             sed -i "s|value: \".*\"|value: \"${{ steps.image-tag.outputs.tag }}\"|" k8s/backend.yml
 
             git add k8s/backend.yml
-            git commit -m "Update image to ${{ steps.image-tag.outputs.tag }}"
+            git commit -m "Updated BACKEND image to ${{ steps.image-tag.outputs.tag }}"
             git push origin main
 
   build-arm64:

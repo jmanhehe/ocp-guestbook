@@ -40,7 +40,7 @@ jobs:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-          
+
       - name: Generate image tag
         id: image-tag
         run: |
@@ -73,5 +73,5 @@ jobs:
             sed -i "s|value: \".*\"|value: \"${{ steps.image-tag.outputs.tag }}\"|" k8s/frontend.yml
 
             git add k8s/frontend.yml
-            git commit -m "Update image to ${{ steps.image-tag.outputs.tag }}"
+            git commit -m "Updated FRONTEND image to ${{ steps.image-tag.outputs.tag }}"
             git push origin main
