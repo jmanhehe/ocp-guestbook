@@ -212,8 +212,6 @@ func (app *App) createEntryHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	
-	console.log("This is a message for testing purpose, executes when you post.")
-	
 	// Invalidera cache
 	if app.Redis != nil {
 		app.Redis.Del(app.Ctx, "entries:all")
